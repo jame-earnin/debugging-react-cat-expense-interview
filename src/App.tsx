@@ -14,6 +14,9 @@ import {
 import { Expense } from "./types/expense";
 import { Input } from "./components/ui/input.tsx";
 import { Fibonacci, FibonacciNumber } from "./components/fibonacci/finobacci.tsx";
+import { Factorial } from "./components/factorial/factorial.tsx";
+import { Gallery } from "./components/gallery/gallery.tsx";
+// import { generateMegaTree, Tree } from "./components/tree/tree.tsx";
 
 
 function App() {
@@ -22,7 +25,7 @@ function App() {
   const [label, setLabel] = useState<string>('');
 
   const [selectedExpenses, setSelectedExpenses] = useState<Expense[]>([]);
-  const bigN = 40
+  const bigN = 39
   const onSubmit = (data: Expense) => {
     setExpenses((expenses) => [
       ...expenses,
@@ -189,18 +192,21 @@ function App() {
             </TableBody>
           </Table>
         </div>
+        <Gallery />
         <h1>Counter: {n}</h1>
         <div className="flex items-center">
           <label htmlFor="counter">Label:</label>
           <Input className="ml-2" id="counter" type="number" onChange={(e) => {
             setLabel(e.target.value)
-          }} value={label} />
+          }} value={label}/>
         </div>
+        <h1>Hello: {label}</h1>
         <h1 className="font-bold">Fibonacci Sequences: N={bigN}</h1>
         <Fibonacci n={bigN}/>
         <FibonacciNumber n={bigN}/>
-        {/*<h1 className="font-bold">Factorial: N={bigN}</h1>*/}
-        {/*<Factorial n={bigN}/>*/}
+        <h1 className="font-bold">Fibonacci N={bigN}</h1>
+        <h1 className="font-bold">Factorial: N={bigN}</h1>
+        <Factorial n={bigN}/>
         {/*<Tree data={generateMegaTree(15)}/>*/}
         <AddDialog
             onCreate={onSubmit}

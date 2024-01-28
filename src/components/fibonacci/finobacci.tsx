@@ -15,7 +15,7 @@ const getFibonacciSequence = (num: number): [number, number] => {
 export function Fibonacci({ n }: Props) {
     return (
         <div className="mt-2">
-            {getFibonacciSequence(n).join(", ")}
+            {getFibonacciSequence(n-1).join(", ")}
         </div>
     )
 }
