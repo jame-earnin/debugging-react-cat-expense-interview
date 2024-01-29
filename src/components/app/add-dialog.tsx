@@ -12,7 +12,9 @@ import { Input } from "../ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ExpenseSchema, expenseSchema } from "../../types/expense";
 import { EXPENSE_TYPES } from "../../constants";
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { getCatFact } from "../../services/catService.ts";
+import { useEffect } from "react";
 
 interface AddDialogProps {
   open: boolean;
@@ -27,24 +29,27 @@ export default function AddDialog({
 }: AddDialogProps) {
   const form = useForm<ExpenseSchema>({
     resolver: zodResolver(expenseSchema),
+    defaultValues: {
+      amount: 0,
+      category: '',
+      item: '',
+    }
   });
 
-  const [catFact, setCatFact] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const { data, isLoading, isError, refetch } = useQuery({
+    enabled: false,
+    queryKey: ['cat-fact'],
+    queryFn: () => getCatFact(),
+  })
+
   useEffect(() => {
     if (open) {
-      setIsLoading(true);
-      fetch("https://catfact.ninja/fact").then(async (respoonse) => {
-        const data = await respoonse.json();
-        setCatFact(data.fact);
-        setIsLoading(false);
-      });
+      refetch()
     }
-  }, [setIsLoading, open]);
+  }, [refetch, open]);
 
   const handleCreate = (data: ExpenseSchema) => {
     form.reset({});
-    setCatFact("");
     onCreate(data);
     onOpenChange(open);
   };
@@ -53,7 +58,6 @@ export default function AddDialog({
     console.log("handleOpenChange", open);
     if (!open) {
       form.reset({});
-      setCatFact("");
     }
     onOpenChange(open);
   };
@@ -73,6 +77,7 @@ export default function AddDialog({
                 <Controller
                   name="item"
                   control={form.control}
+                  rules={{ required: "Item name is required" }}
                   render={({ field, fieldState }) => {
                     return (
                       <Input
@@ -148,8 +153,14 @@ export default function AddDialog({
             <div className="font-medium">😸 Random cat fact:</div>
             {isLoading ? (
               <div className="italic mt-2">Loading...</div>
+            ) : isError ?
+            (
+                <div className="text-sm mt-2">Error loading cat fact</div>
+            ) :
+             data ? (
+              <div className="text-sm mt-2">{data.fact}</div>
             ) : (
-              <div className="text-sm mt-2">{catFact}</div>
+              <div className="italic mt-2">No cat fact</div>
             )}
           </div>
         </div>
