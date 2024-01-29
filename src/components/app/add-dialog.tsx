@@ -29,11 +29,6 @@ export default function AddDialog({
 }: AddDialogProps) {
   const form = useForm<ExpenseSchema>({
     resolver: zodResolver(expenseSchema),
-    defaultValues: {
-      amount: 0,
-      category: '',
-      item: '',
-    }
   });
 
   const { data, isLoading, isError, refetch } = useQuery({
