@@ -36,13 +36,25 @@ export async function getBreeds() {
     return data
 }
 
-export async function GetFacts() {
+
+type queryOrUndefined = paths["/facts"]["get"]["parameters"]['query']
+type query = NonNullable<queryOrUndefined>
+export type CatFactsParams = query
+
+export type CatFacts = paths['/facts']['get']['responses'][200]["content"]["application/json"];
+export async function getCatFacts({ limit, max_length}: CatFactsParams) {
     const { data, error } = await GET("/facts", {
         mode: "cors",
         referrerPolicy: 'strict-origin-when-cross-origin',
         headers: {
             "Content-Type": "application/json",
         },
+        params: {
+            query: {
+                limit,
+                max_length
+            }
+        }
     } );
     if (error) {
         throw error;
