@@ -12,9 +12,7 @@ import { Input } from "../ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ExpenseSchema, expenseSchema } from "../../types/expense";
 import { EXPENSE_TYPES } from "../../constants";
-import { useQuery } from "@tanstack/react-query";
-import { getCatFact } from "../../services/catService.ts";
-import { useEffect } from "react";
+import { useCatFact } from "../hooks/useCatFact.tsx";
 
 interface AddDialogProps {
   open: boolean;
@@ -30,18 +28,7 @@ export default function AddDialog({
   const form = useForm<ExpenseSchema>({
     resolver: zodResolver(expenseSchema),
   });
-
-  const { data, isLoading, isError, refetch } = useQuery({
-    enabled: false,
-    queryKey: ['cat-fact'],
-    queryFn: () => getCatFact(),
-  })
-
-  useEffect(() => {
-    if (open) {
-      refetch()
-    }
-  }, [refetch, open]);
+  const { data, isLoading, isError} = useCatFact({ open });
 
   const handleCreate = (data: ExpenseSchema) => {
     form.reset({});
