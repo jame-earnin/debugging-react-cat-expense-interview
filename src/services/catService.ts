@@ -6,7 +6,6 @@ const { GET } = createClient<paths>({ baseUrl: "https://catfact.ninja" });
 
 export type CatFact = paths["/fact"]["get"]["responses"][200]["content"]["application/json"];
 export type Breed = 'TODO'
-export type Facts = 'TODO'
 
 export async function getCatFact() {
     const { data, error } = await GET("/fact", {
