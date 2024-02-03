@@ -4,8 +4,9 @@ import type { paths } from "../types/cat-fact.ts";
 
 const { GET } = createClient<paths>({ baseUrl: "https://catfact.ninja" });
 
-export type CatFact = paths["/fact"]["get"]["responses"][200]["content"]["application/json"];
-export type Breed = 'TODO'
+export type CatFact = any // TODO: Fix this
+export type Breed = any // TODO: Fix this
+export type CatFacts = any // TODO: Fix this
 
 export async function getCatFact() {
     const { data, error } = await GET("/fact", {
@@ -35,12 +36,7 @@ export async function getBreeds() {
     return data
 }
 
-
-type queryOrUndefined = paths["/facts"]["get"]["parameters"]['query']
-type query = NonNullable<queryOrUndefined>
-export type CatFactsParams = query
-
-export type CatFacts = paths['/facts']['get']['responses'][200]["content"]["application/json"];
+export type CatFactsParams = any // TODO Fix this
 export async function getCatFacts({ limit, max_length}: CatFactsParams) {
     const { data, error } = await GET("/facts", {
         mode: "cors",
