@@ -21,7 +21,6 @@ Find the bug and fix it and explain why it was slow and janky.
 
 ## Challenge 2 - React Common Issue
 Run `yarn dev`, open http://localhost:5173/
-Try to type `cat expense` in label
 When the cat expense dialog is open, you can see that the cat fact is fetched multiple times.
 
 This behavior is not expected. Cat Fact should be fetched only once when opening the dialog.
