@@ -186,7 +186,7 @@ function App() {
             </TableBody>
           </Table>
         </div>
-        <Tree data={generateMegaTree(15)}/>
+        <Tree data={generateMegaTree(17)}/>
         <AddDialog
             onCreate={onSubmit}
             open={showAddDialog}
