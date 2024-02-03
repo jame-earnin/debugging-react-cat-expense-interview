@@ -17,6 +17,8 @@ and you will see how the app is super slow and janky.
 
 Find the bug and fix it and explain why it was slow and janky.
 
+### Note: Don't change fibonacci.tsx, factorial.tsx
+
 ## Challenge 2 - React Common Issue
 Run `yarn dev`, open http://localhost:5173/
 Try to type `cat expense` in label
@@ -27,7 +29,7 @@ This behavior is not expected. Cat Fact should be fetched only once when opening
 Find the bug and fix it and explain why it was slow and janky.
 
 ## Challenge 3 - Type Challenge
-Go to src/services/catService.ts, and fix all TOODs type in this file.
+Go to src/services/catService.ts, and fix all `TOOO` type in this file.
 
 ## Challenge 4 - Web Performance
 Checkout the branch `big-tree`
