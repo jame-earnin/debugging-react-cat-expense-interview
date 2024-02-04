@@ -42,45 +42,45 @@ The tree view should look like this.
 
 N (Depth) = 3
 
-Node 1
-- Node 1.1
-- - Node 1.1.1
-- - Node 1.1.2
-- - Node 1.1.3
-- Node 1.2
-- - Node 1.2.1
-- - Node 1.2.2
-- - Node 1.2.3
-- Node 1.3
-- - Node 1.3.1
-- - Node 1.3.2
-- - Node 1.3.3
-    Node 2
-- Node 2.1
-- - Node 2.1.1
-- - Node 2.1.2
-- - Node 2.1.3
-- Node 2.2
-- - Node 2.2.1
-- - Node 2.2.2
-- - Node 2.2.N
-- Node 2.3
-- - Node 2.3.1
-- - Node 2.3.2
-- - Node 2.3.3
-    Node 3
-- Node 3.1
-- - Node 3.1.1
-- - Node 3.1.2
-- - Node 3.1.3
-- Node 3.2
-- - Node 3.2.1
-- - Node 3.2.2
-- - Node 3.2.N
-- Node 3.3
-- - Node 3.3.1
-- - Node 3.3.2
-- - Node 3.3.3
+Cat 1
+- Cat 1.1
+- - Cat 1.1.1
+- - Cat 1.1.2
+- - Cat 1.1.3
+- Cat 1.2
+- - Cat 1.2.1
+- - Cat 1.2.2
+- - Cat 1.2.3
+- Cat 1.3
+- - Cat 1.3.1
+- - Cat 1.3.2
+- - Cat 1.3.3
+    Cat 2
+- Cat 2.1
+- - Cat 2.1.1
+- - Cat 2.1.2
+- - Cat 2.1.3
+- Cat 2.2
+- - Cat 2.2.1
+- - Cat 2.2.2
+- - Cat 2.2.N
+- Cat 2.3
+- - Cat 2.3.1
+- - Cat 2.3.2
+- - Cat 2.3.3
+    Cat 3
+- Cat 3.1
+- - Cat 3.1.1
+- - Cat 3.1.2
+- - Cat 3.1.3
+- Cat 3.2
+- - Cat 3.2.1
+- - Cat 3.2.2
+- - Cat 3.2.N
+- Cat 3.3
+- - Cat 3.3.1
+- - Cat 3.3.2
+- - Cat 3.3.3
 
 Each node must possible to toggle open and close. The default state is open.
 
