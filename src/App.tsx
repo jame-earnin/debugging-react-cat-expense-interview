@@ -186,7 +186,7 @@ function App() {
             </TableBody>
           </Table>
         </div>
-        <Tree data={generateNxNTree(5)}/>
+        <Tree data={generateNxNTree(3)}/>
         <AddDialog
             onCreate={onSubmit}
             open={showAddDialog}
