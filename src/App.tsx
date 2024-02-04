@@ -12,7 +12,7 @@ import {
   TableRow,
 } from "./components/ui/table";
 import { Expense } from "./types/expense";
-import { generateMegaTree, Tree } from "./components/tree/tree.tsx";
+import { generateNxNTree, Tree } from "./components/tree/tree.tsx";
 
 
 function App() {
@@ -186,7 +186,7 @@ function App() {
             </TableBody>
           </Table>
         </div>
-        <Tree data={generateMegaTree(17)}/>
+        <Tree data={generateNxNTree(5)}/>
         <AddDialog
             onCreate={onSubmit}
             open={showAddDialog}
