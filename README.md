@@ -34,12 +34,14 @@ In `src/types/cat-fact.ts`, you will see the generated types.
 Go to `src/services/catService.ts`, and fix all `TOOO` type in this file without `any` type.
 
 ## Challenge 4 - Algorithm
+
 There is tree component in `src/components/tree/tree.tsx`.
 Implement a generated data structure function `generateNxNTree` that **accept N** to generate N x N depth for the tree view component `Tree`.
 
 The tree view should look like this.
 
 N (Depth) = 3
+
 Node 1
 - Node 1.1
 - - Node 1.1.1
