@@ -84,7 +84,23 @@ Cat 1
 
 Each node must possible to toggle open and close. The default state is open.
 
-## Challenge 5 - Asynchronous Programming
-[//]: # (TODO:)
+## Challenge 5 - Typeahead (Asynchronous)
+Checkout `typeahead` branch.
+
+Run `yarn start:api` to start the API server.
+
+Open another terminal.
+Run `yarn dev`, open http://localhost:5173/
+
+Try to search for cat breed `Birm` in Cat breed via typing.
+You will see that the search is not working properly.
+It returns full list breeds from `B` search query.
+This is not expected. It should return only `Birman` breed.
+
+In real world, this can happen when the API server is slow or the network is slow.
+Fix this issue
+
+### Note: Don't change index.js
+
 
 

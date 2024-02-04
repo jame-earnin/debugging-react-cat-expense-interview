@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import "./App.css";
 import AddDialog from "./components/app/add-dialog";
 import { Button } from "./components/ui/button";
@@ -12,20 +12,14 @@ import {
   TableRow,
 } from "./components/ui/table";
 import { Expense } from "./types/expense";
-import { Input } from "./components/ui/input.tsx";
-import { Gallery } from "./components/gallery/gallery.tsx";
-import { Factorial } from "./components/factorial/factorial.tsx";
-import { Fibonacci, FibonacciNumber } from "./components/fibonacci/finobacci.tsx";
-// import { generateMegaTree, Tree } from "./components/tree/tree.tsx";
+import { Breed } from "./components/breed/breed.tsx";
 
 
 function App() {
   const [showAddDialog, setShowAddDialog] = useState(false);
   const [expenses, setExpenses] = useState<Expense[]>([]);
-  const [label, setLabel] = useState<string>('');
 
   const [selectedExpenses, setSelectedExpenses] = useState<Expense[]>([]);
-  const bigN = 39
   const onSubmit = (data: Expense) => {
     setExpenses((expenses) => [
       ...expenses,
@@ -78,20 +72,6 @@ function App() {
     }
     return result;
   }, [expenseByCategory]);
-
-  const [n, setN] = useState(0);
-  useEffect(() => {
-    const i = setInterval(() => {
-      if (n < 200) {
-        setN((n) => n + 1);
-      } else {
-        setN(1);
-      }
-    }, 1000)
-    return () => {
-      clearTimeout(i)
-    }
-  }, [n]);
 
   return (
       <div className="container mx-auto max-w-4xl mt-8">
@@ -192,22 +172,7 @@ function App() {
             </TableBody>
           </Table>
         </div>
-        <Gallery />
-        <h1>Counter: {n}</h1>
-        <div className="flex items-center">
-          <label htmlFor="counter">Label:</label>
-          <Input className="ml-2" id="counter" type="number" onChange={(e) => {
-            setLabel(e.target.value)
-          }} value={label}/>
-        </div>
-        <h1>Hello: {label}</h1>
-        <h1 className="font-bold">Fibonacci Sequences: N={bigN}</h1>
-        <Fibonacci n={bigN}/>
-        <FibonacciNumber n={bigN}/>
-        <h1 className="font-bold">Fibonacci N={bigN}</h1>
-        <h1 className="font-bold">Factorial: N={bigN}</h1>
-        <Factorial n={bigN}/>
-        {/*<Tree data={generateMegaTree(15)}/>*/}
+        <Breed />
         <AddDialog
             onCreate={onSubmit}
             open={showAddDialog}
