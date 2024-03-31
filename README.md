@@ -34,6 +34,24 @@ In `src/types/cat-fact.ts`, you will see the generated types.
 Go to `src/services/catService.ts`, and fix all `TOOO` type in this file without `any` type.
 
 ## Challenge 4
+Checkout `typeahead` branch.
+
+Run `yarn start:api` to start the API server.
+
+Open another terminal.
+Run `yarn dev`, open http://localhost:5173/
+
+Try to search for cat breed `Birm` in Cat breed via typing.
+You will see that the search is not working properly.
+It returns a full list of breeds from `B` search query.
+This is not expected. It should return only `Birman` breed.
+
+In the real world, this can happen when the API server is slow or the network is slow.
+Fix this issue
+
+### Note: Don't change index.js
+
+## Challenge 5
 Checkout `tree` branch.
 
 There is a tree component in `src/components/tree/tree.tsx`.
@@ -86,21 +104,3 @@ Cat 3
 - - Cat 3.3.3
 
 Each node must be able to toggle open and close. The default state is open.
-
-## Challenge 5
-Checkout `typeahead` branch.
-
-Run `yarn start:api` to start the API server.
-
-Open another terminal.
-Run `yarn dev`, open http://localhost:5173/
-
-Try to search for cat breed `Birm` in Cat breed via typing.
-You will see that the search is not working properly.
-It returns a full list of breeds from `B` search query.
-This is not expected. It should return only `Birman` breed.
-
-In the real world, this can happen when the API server is slow or the network is slow.
-Fix this issue
-
-### Note: Don't change index.js
