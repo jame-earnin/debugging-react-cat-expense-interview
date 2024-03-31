@@ -81,16 +81,13 @@ function App() {
 
   const [n, setN] = useState(0);
   useEffect(() => {
-    const i = setInterval(() => {
+    setInterval(() => {
       if (n < 200) {
         setN((n) => n + 1);
       } else {
         setN(1);
       }
     }, 1000)
-    return () => {
-      clearTimeout(i)
-    }
   }, [n]);
 
   return (
