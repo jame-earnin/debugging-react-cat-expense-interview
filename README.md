@@ -6,7 +6,7 @@ You can ask for a hint but your score will be deducted.
 
 ## Challenge 1
 Run `yarn dev`, open http://localhost:5173/
-Try to type `cat expense` in label
+Try to type `123456` in label
 and you will see how the app is super slow and janky. 
 
 Find the bug and fix it and explain why it was slow and janky.
