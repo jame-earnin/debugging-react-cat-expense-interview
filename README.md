@@ -20,7 +20,7 @@ Find the bug and fix it and explain why it was slow and janky.
 ## Challenge 2
 Run `yarn dev`, open http://localhost:5173/
 
-The counter logic seems to be wrong. It should plus 1 per 1 second. Fixed it.
+The counter logic seems to be wrong. It should plus 1 per 1 second. Fix it.
 
 When the cat expense dialog is open, you can see that the cat fact is fetched multiple times.
 
